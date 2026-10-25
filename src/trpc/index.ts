@@ -99,7 +99,7 @@ if(subscriptionsPlan.isSubscribed && dbUser.stripeCustomerId) {
 const stripeSession =  await stripe.checkout.sessions.create({
   success_url: billingurl,
   cancel_url: billingurl,
-  payment_method_types: ["card","paypal","us_bank_account"],
+  allowed_payment_method_types: ["card","paypal","us_bank_account"],
   mode: "subscription",
   billing_address_collection: "auto",
   line_items: [
